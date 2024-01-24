@@ -189,11 +189,36 @@ public partial class MainPage : ContentPage {
         };
         Application.Current.OpenWindow(barKeybindsWindow);
     }
+
     public static void CloseBarKeybindsConfigMenu() {
         Application.Current?.CloseWindow(barKeybindsWindow);
         var x = barKeybindsWindow.Page as BarKeybindsConfigurations;
         x.OnClose();
         barKeybindsWindow = null;
+    }
+
+    static Window rotationsWindow = null;
+    private void btnRotations_Clicked(object sender, EventArgs e)
+    {
+        rotationsWindow = new Window
+        {
+            Page = new Rotations { },
+            Title = "Rotations",
+            Width = 670,
+            Height = 520
+        };
+        Application.Current.OpenWindow(rotationsWindow);
+    }
+
+    public static void CloseRotationsWindow()
+    {
+        Application.Current?.CloseWindow(rotationsWindow);
+        rotationsWindow = null;
+    }
+
+    private void cmbMode_SelectedIndexChanged(object sender, EventArgs e)
+    {
+
     }
 }
 

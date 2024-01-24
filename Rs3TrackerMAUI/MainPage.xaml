@@ -47,6 +47,11 @@
                         WidthRequest="150"
                         Margin="5"
                         Clicked="btnBarKeybinds_Clicked" />
+                <Button x:Name="btnRotations"
+                        Text="Rotations"
+                        WidthRequest="150"
+                        Margin="5"
+                        Clicked="btnRotations_Clicked" />
             </StackLayout>
         </StackLayout>
 

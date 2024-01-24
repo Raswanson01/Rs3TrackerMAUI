@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Rs3TrackerMAUI.ContentPages.Rotations"
+             Title="Rotations">
+    <StackLayout Orientation="Horizontal">
+        <StackLayout Orientation="Vertical">
+            <Button x:Name="btnImport"
+                    WidthRequest="150"
+                    Margin="5"
+                    Clicked="btnImport_Clicked"
+                    Text="Import Rotation"/>
+            <Button x:Name="btnExport"
+                    WidthRequest="150"
+                    Margin="5"
+                    Clicked="btnExport_Clicked"
+                    Text="Export Rotation"/>
+            <Button x:Name="btnClose"
+                    WidthRequest="150"
+                    Margin="5"
+                    Clicked="btnClose_Clicked"
+                    Text="Close"/>
+            <Picker x:Name="rotationPicker"
+                WidthRequest="200"
+                Margin="5"
+                HeightRequest="45"
+                VerticalTextAlignment="Center"
+                ItemsSource="{Binding}"
+                ItemDisplayBinding="{Binding name}"
+                SelectedItem="{Binding name}"
+                SelectedIndexChanged="rotationPicker_SelectedIndexChanged"
+                />
+
+        </StackLayout>
+        <CollectionView x:Name="abilityView" 
+                        ItemsSource="{Binding}"
+                        WidthRequest="400">
+            <CollectionView.ItemsLayout>
+                <GridItemsLayout Orientation="Vertical" Span="5" />
+            </CollectionView.ItemsLayout>
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Image x:Name="{Binding name}"
+                           Source="{Binding img}" 
+                           Aspect="AspectFill"
+                           Margin="5"/>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </StackLayout>
+</ContentPage>

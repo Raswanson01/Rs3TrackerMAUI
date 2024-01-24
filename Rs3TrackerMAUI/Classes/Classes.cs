@@ -26,6 +26,12 @@ namespace Rs3TrackerMAUI.Classes {
             public string img { get; set; }
         }
 
+        public class Rotation
+        {
+            public string name { get; set; }
+            public List<Ability> abilities { get; set; }
+        }
+
         public class KeybindClass {
             public string modifier { get; set; }
             public string key { get; set; }
